@@ -3,7 +3,7 @@ from torch import nn
 
 #!/user/bin/python
 # coding=utf-8
-train_root="/data/private/zhoucaixia/workspace/UD_Edge/"
+#train_root=""
 import os, sys
 from statistics import mode
 sys.path.append(train_root)
