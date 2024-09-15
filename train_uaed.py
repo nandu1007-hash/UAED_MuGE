@@ -6,7 +6,7 @@ from torch import nn
 #train_root=""
 import os, sys
 from statistics import mode
-sys.path.append(train_root)
+#sys.path.append(train_root)
 
 import numpy as np
 from PIL import Image
