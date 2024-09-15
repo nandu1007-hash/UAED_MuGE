@@ -65,19 +65,19 @@ parser.add_argument('--distribution', default="gs", type=str, help='the output d
 
 args = parser.parse_args()
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
+
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
 
 THIS_DIR = abspath(dirname(__file__))
 TMP_DIR = join(THIS_DIR, args.tmp+"{}_{}_weightedstd{}_declr_adaexp".format(MODEL_NAME[7:],args.distribution,args.std_weight))
 
-
 if not isdir(TMP_DIR):
-  os.makedirs(TMP_DIR)
+    os.makedirs(TMP_DIR)
 
 file_name=os.path.basename(__file__)
-copyfile(join(train_root,MODEL_NAME[:6],MODEL_NAME[7:]+".py"),join(TMP_DIR,MODEL_NAME[7:]+".py"))
-copyfile(join(train_root,"train",file_name),join(TMP_DIR,file_name))
+copyfile(join(MODEL_NAME[:6], MODEL_NAME[7:]+".py"), join(TMP_DIR, MODEL_NAME[7:]+".py"))
+copyfile(join("train", file_name), join(TMP_DIR, file_name))
 random_seed = 555
 if random_seed > 0:
     random.seed(random_seed)
