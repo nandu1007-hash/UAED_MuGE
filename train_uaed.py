@@ -76,7 +76,7 @@ if not isdir(TMP_DIR):
     os.makedirs(TMP_DIR)
 
 file_name=os.path.basename(__file__)
-copyfile(join(MODEL_NAME[:6], MODEL_NAME[7:]+".py"), join(TMP_DIR, MODEL_NAME[7:]+".py"))
+copyfile(join("model", "sigma_logit_unetpp.py"), join(TMP_DIR, "sigma_logit_unetpp.py"))
 copyfile(join("train", file_name), join(TMP_DIR, file_name))
 random_seed = 555
 if random_seed > 0:
